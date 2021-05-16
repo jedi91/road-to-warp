@@ -1,0 +1,9 @@
+{
+  "cSpell.words": [
+    "fontsource"
+  ],
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.renderWhitespace": "all",
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
