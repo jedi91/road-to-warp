@@ -1,6 +1,7 @@
 import { Typography } from "@material-ui/core";
 import Head from "next/head";
 import useStyles from "./styles";
+import GitHubIcon from "@material-ui/icons/GitHub";
 
 const HomePage = () => {
   const styles = useStyles();
@@ -28,7 +29,11 @@ const HomePage = () => {
         </Typography>
       </main>
 
-      <footer className={styles.footer}></footer>
+      <footer className={styles.footer}>
+        <a href="https://github.com/jedi91/road-to-warp">
+          <GitHubIcon />
+        </a>
+      </footer>
     </div>
   );
 };
