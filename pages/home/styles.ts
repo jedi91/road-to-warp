@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     height: "100vh",
+    width: "100%",
   },
   main: {
     padding: "5rem 0",
@@ -29,6 +30,28 @@ const useStyles = makeStyles({
   title: {
     textAlign: "center",
     verticalAlign: "center",
+  },
+  bottomNav: {
+    padding: "15px",
+    backgroundColor: "#B8B8B8",
+    position: "absolute",
+    bottom: "20%",
+  },
+  header: {
+    width: "95%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  appBar: {
+    backgroundColor: "grey",
+  },
+  drawer: {
+    width: "100%",
+  },
+  drawerButton: {
+    justifyContent: "flex-start",
+    padding: 20,
   },
 });
 
