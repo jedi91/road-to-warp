@@ -18,6 +18,7 @@ const useStyles = makeStyles({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
+    height: "100%",
   },
   footer: {
     width: "100%",
@@ -46,12 +47,18 @@ const useStyles = makeStyles({
   appBar: {
     backgroundColor: "grey",
   },
-  drawer: {
-    width: "100%",
+  card: {
+    padding: "5%",
+    alignContent: "center",
+    justifyContent: "center",
+    height: "500px",
   },
-  drawerButton: {
-    justifyContent: "flex-start",
-    padding: 20,
+  cardTitle: {
+    textAlign: "center",
+  },
+  cardMedia: {
+    height: 0,
+    paddingTop: "45%", //"56.25%",
   },
 });
 
