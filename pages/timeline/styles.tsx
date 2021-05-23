@@ -25,6 +25,28 @@ const useStyles = makeStyles({
     width: "50%",
     //height: "500px",
   },
+  timelineCard: {
+    padding: "1%",
+    paddingBottom: 0,
+    alignContent: "center",
+    justifyContent: "center",
+    width: "50%",
+    //height: "500px",
+  },
+  timelineCardAlt: {
+    padding: "1%",
+    paddingBottom: 0,
+    alignContent: "center",
+    justifyContent: "center",
+    width: "50%",
+    //height: "500px",
+  },
+  timelineDate: {
+    textAlign: "right",
+  },
+  timelineDateAlt: {
+    textAlign: "left",
+  },
   cardTitle: {
     textAlign: "center",
   },

@@ -15,16 +15,10 @@ import {
   TimelineDot,
   TimelineContent,
 } from "@material-ui/lab";
-import { Dayjs } from "dayjs";
+import dayjs from "dayjs";
 import { FC } from "react";
 import useStyles from "./styles";
-
-interface WarpTimelineItem {
-  date: Dayjs;
-  title: string;
-  imagePath: string;
-  description: string;
-}
+import { WarpTimelineItem } from "./types";
 
 interface WarpTimelineProps {
   items?: WarpTimelineItem[];
@@ -35,42 +29,85 @@ const WarpTimeline: FC<WarpTimelineProps> = ({ items = [] }) => {
   const styles = useStyles();
   return (
     <Timeline>
-      {items.map((item) => (
-        <TimelineItem>
-          <TimelineOppositeContent>
-            <Typography variant="body2" color="textSecondary">
-              {item.date.format("MMM D YYYY")}
-            </Typography>
-          </TimelineOppositeContent>
-          <TimelineSeparator>
-            <TimelineDot />
-            <TimelineConnector />
-          </TimelineSeparator>
-          <TimelineContent>
-            <Card
-              className={styles.card}
+      {items.map((item, index) =>
+        index % 2 === 0 ? (
+          <TimelineItem>
+            <TimelineOppositeContent className={styles.timelineDate}>
+              <Typography variant="body2" color="textSecondary">
+                {dayjs(item.date).format("MMM D YYYY")}
+              </Typography>
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent>
+              <Card
+                className={styles.timelineCard}
+                style={{
+                  backgroundColor: theme.palette.grey[400],
+                }}
+              >
+                <CardHeader
+                  className={styles.cardTitle}
+                  title={item.title}
+                />
+                <CardMedia
+                  className={styles.timelineMedia}
+                  image={item.imagePath}
+                  title={item.title}
+                />
+                <CardContent>
+                  <Typography className={styles.title} component="h6">
+                    {item.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </TimelineContent>
+          </TimelineItem>
+        ) : (
+          <TimelineItem>
+            <TimelineOppositeContent
               style={{
-                backgroundColor: theme.palette.grey[400],
+                display: "flex",
+                justifyContent: "flex-end",
+                flexDirection: "row",
               }}
             >
-              <CardHeader
-                className={styles.cardTitle}
-                title={item.title}
-              />
-              <CardMedia
-                className={styles.timelineMedia}
-                image={item.imagePath}
-                title={item.title}
-              />
-              <CardContent>
-                <Typography className={styles.title} component="h6">
-                  {item.description}
-                </Typography>
-              </CardContent>
-            </Card>
-          </TimelineContent>
-        </TimelineItem>
-      ))}
+              <Card
+                className={styles.timelineCard}
+                style={{
+                  backgroundColor: theme.palette.grey[400],
+                }}
+              >
+                <CardHeader
+                  className={styles.cardTitle}
+                  title={item.title}
+                />
+                <CardMedia
+                  className={styles.timelineMedia}
+                  image={item.imagePath}
+                  title={item.title}
+                />
+                <CardContent>
+                  <Typography className={styles.title} component="h6">
+                    {item.description}
+                  </Typography>
+                </CardContent>
+              </Card>
+            </TimelineOppositeContent>
+            <TimelineSeparator>
+              <TimelineDot />
+              <TimelineConnector />
+            </TimelineSeparator>
+            <TimelineContent className={styles.timelineDateAlt}>
+              <Typography variant="body2" color="textSecondary">
+                {dayjs(item.date).format("MMM D YYYY")}
+              </Typography>
+            </TimelineContent>
+          </TimelineItem>
+        ),
+      )}
     </Timeline>
   );
 };

@@ -11,8 +11,10 @@ import { Header } from "../../components";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import WarpTimeline from "./WarpTimeline";
 import dayjs from "dayjs";
+import { useTimeline } from "./hooks";
 
 const TimelinePage = () => {
+  const timeline = useTimeline();
   const theme = useTheme();
   const styles = useStyles();
   console.log(dayjs().toISOString());
@@ -41,17 +43,7 @@ const TimelinePage = () => {
         </Card>
       </div>
       <div>
-        <WarpTimeline
-          items={[
-            {
-              title: "Sputnik 1 Launches",
-              date: dayjs("1957-10-04T19:28:00.000Z"),
-              imagePath: "/sputnik-1.jpg",
-              description:
-                "Earth's first artificial satellite, Sputnik 1, is launched into orbit by the USSR",
-            },
-          ]}
-        />
+        <WarpTimeline items={timeline} />
       </div>
       <footer className={styles.footer}>
         <a href="https://github.com/jedi91/road-to-warp">
