@@ -36,12 +36,14 @@ const NavigationDrawer: FC<NavigationDrawerProps> = ({
       <Button
         className={styles.drawerButton}
         startIcon={<MenuBookIcon />}
+        onClick={() => window.open("/learn", "_self")}
       >
         Learning Portal
       </Button>
       <Button
         className={styles.drawerButton}
         startIcon={<TimelineIcon />}
+        onClick={() => window.open("/timeline", "_self")}
       >
         Timeline
       </Button>

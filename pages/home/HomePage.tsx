@@ -26,7 +26,7 @@ const HomePage = () => {
         >
           <CardHeader
             className={styles.cardTitle}
-            title="The Road to Warp"
+            title="Road to Warp"
             subheader=""
           />
           <CardMedia

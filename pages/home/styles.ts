@@ -19,10 +19,11 @@ const useStyles = makeStyles({
     justifyContent: "center",
     alignItems: "center",
     height: "100%",
+    width: "100%",
   },
   footer: {
     width: "100%",
-    height: "100px",
+    height: "75px",
     borderTop: "1px solid #eaeaea",
     display: "flex",
     justifyContent: "center",
@@ -51,7 +52,8 @@ const useStyles = makeStyles({
     padding: "5%",
     alignContent: "center",
     justifyContent: "center",
-    height: "500px",
+    // height: "500px",
+    width: "50%",
   },
   cardTitle: {
     textAlign: "center",
