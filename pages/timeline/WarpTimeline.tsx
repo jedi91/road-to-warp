@@ -19,6 +19,7 @@ import dayjs from "dayjs";
 import { FC } from "react";
 import useStyles from "./styles";
 import { WarpTimelineItem } from "./types";
+import { getDecadeText } from "./utils";
 
 interface WarpTimelineProps {
   items?: WarpTimelineItem[];
@@ -38,7 +39,15 @@ const WarpTimeline: FC<WarpTimelineProps> = ({ items = [] }) => {
               </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot style={{ height: 55 }}>
+                <Typography
+                  style={{
+                    marginTop: 10,
+                  }}
+                >
+                  {getDecadeText(dayjs(item.date))}
+                </Typography>
+              </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent>
@@ -97,7 +106,15 @@ const WarpTimeline: FC<WarpTimelineProps> = ({ items = [] }) => {
               </Card>
             </TimelineOppositeContent>
             <TimelineSeparator>
-              <TimelineDot />
+              <TimelineDot style={{ height: 55 }}>
+                <Typography
+                  style={{
+                    marginTop: 10,
+                  }}
+                >
+                  {getDecadeText(dayjs(item.date))}
+                </Typography>
+              </TimelineDot>
               <TimelineConnector />
             </TimelineSeparator>
             <TimelineContent className={styles.timelineDateAlt}>

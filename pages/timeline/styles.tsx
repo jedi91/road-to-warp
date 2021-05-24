@@ -1,7 +1,17 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
-  wrapper: {
+  main: {
+    height: "100vh",
+    width: "100vw",
+    overflow: "hidden",
+  },
+  scrollArea: {
+    overflow: "scroll",
+    height: "95vh",
+    //width: "100vw",
+  },
+  cardWrapper: {
     width: "100%",
     alignContent: "center",
     justifyContent: "center",
@@ -11,7 +21,7 @@ const useStyles = makeStyles({
   title: {
     textAlign: "center",
     verticalAlign: "center",
-    margin: "5%",
+    // margin: "5%",
     marginTop: 0,
   },
   appBar: {
@@ -26,7 +36,7 @@ const useStyles = makeStyles({
     //height: "500px",
   },
   timelineCard: {
-    padding: "1%",
+    //padding: "1%",
     paddingBottom: 0,
     alignContent: "center",
     justifyContent: "center",
@@ -34,7 +44,7 @@ const useStyles = makeStyles({
     //height: "500px",
   },
   timelineCardAlt: {
-    padding: "1%",
+    //padding: "1%",
     paddingBottom: 0,
     alignContent: "center",
     justifyContent: "center",

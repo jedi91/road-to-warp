@@ -19,38 +19,41 @@ const TimelinePage = () => {
   const styles = useStyles();
   console.log(dayjs().toISOString());
   return (
-    <>
+    <div className={styles.main}>
       <Header title="Timeline" />
-      <div className={styles.wrapper}>
-        <Card
-          className={styles.card}
-          style={{
-            backgroundColor: theme.palette.grey[400],
-          }}
-        >
-          <CardHeader className={styles.cardTitle} title="Timeline" />
-          <CardMedia
-            className={styles.cardMedia}
-            image="/milky-way.jpg"
-            title="Milky Way"
-          />
-          <CardContent>
-            <Typography className={styles.title} component="h6">
-              An interactive timeline of how we got here and where we
-              are going.
-            </Typography>
-          </CardContent>
-        </Card>
-      </div>
-      <div>
+      <div className={styles.scrollArea}>
+        <div className={styles.cardWrapper}>
+          <Card
+            className={styles.card}
+            style={{
+              backgroundColor: theme.palette.grey[400],
+            }}
+          >
+            <CardHeader
+              className={styles.cardTitle}
+              title="Timeline"
+            />
+            <CardMedia
+              className={styles.cardMedia}
+              image="/milky-way.jpg"
+              title="Milky Way"
+            />
+            <CardContent>
+              <Typography className={styles.title} component="h6">
+                An interactive timeline of how we got here and where
+                we are going.
+              </Typography>
+            </CardContent>
+          </Card>
+        </div>
         <WarpTimeline items={timeline} />
+        <footer className={styles.footer}>
+          <a href="https://github.com/jedi91/road-to-warp">
+            <GitHubIcon />
+          </a>
+        </footer>
       </div>
-      <footer className={styles.footer}>
-        <a href="https://github.com/jedi91/road-to-warp">
-          <GitHubIcon />
-        </a>
-      </footer>
-    </>
+    </div>
   );
 };
 
