@@ -18,14 +18,14 @@ import {
 import dayjs from "dayjs";
 import { FC } from "react";
 import useStyles from "./styles";
-import { WarpTimelineItem } from "./types";
+import { TimelineViewItem } from "./types";
 import { getDecadeText } from "./utils";
 
-interface WarpTimelineProps {
-  items?: WarpTimelineItem[];
+interface TimelineViewProps {
+  items?: TimelineViewItem[];
 }
 
-const WarpTimeline: FC<WarpTimelineProps> = ({ items = [] }) => {
+const TimelineView: FC<TimelineViewProps> = ({ items = [] }) => {
   const theme = useTheme();
   const styles = useStyles();
   return (
@@ -129,4 +129,4 @@ const WarpTimeline: FC<WarpTimelineProps> = ({ items = [] }) => {
   );
 };
 
-export default WarpTimeline;
+export default TimelineView;

@@ -1,10 +1,10 @@
 import dayjs from "dayjs";
 import { NextApiRequest, NextApiResponse } from "next";
-import { WarpTimelineItem } from "../timeline/types";
+import { TimelineViewItem } from "../timeline/types";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // TODO: Move the data into a json file
-  const result: WarpTimelineItem[] = [
+  const result: TimelineViewItem[] = [
     {
       title: "Sputnik 1 Launches",
       date: "1957-10-04T19:28:00.000Z",

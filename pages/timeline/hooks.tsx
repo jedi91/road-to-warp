@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { WarpTimelineItem } from "./types";
+import { TimelineViewItem } from "./types";
 
 const useTimeline = () => {
-  const [timeline, setTimeline] = useState<WarpTimelineItem[]>([]);
+  const [timeline, setTimeline] = useState<TimelineViewItem[]>([]);
 
   useEffect(() => {
     fetch("http://localhost:3000/api/getTimeline").then(
       async (data) => {
-        const result: WarpTimelineItem[] = await data.json();
+        const result: TimelineViewItem[] = await data.json();
         setTimeline(result);
       },
     );

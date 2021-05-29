@@ -1,6 +1,6 @@
 import { Dayjs } from "dayjs";
 
-export interface WarpTimelineItem {
+export interface TimelineViewItem {
   date: string;
   title: string;
   imagePath: string;
